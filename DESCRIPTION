@@ -1,0 +1,19 @@
+Package: Project1TREV0002
+Type: Package
+Title: Functions for project 1
+Version: 0.1.0
+Author: Luis Mario Trevisi
+Maintainer: Luis Mario Trevisi <lmtrevisi@ou.edut>
+Description: Functions for project 1 in MATH 4773.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1
+Suggests: 
+    knitr,
+    rmarkdown
+Imports: 
+    ggplot2,
+    patchwork,
+    stats
+VignetteBuilder: knitr
