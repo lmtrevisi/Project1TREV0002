@@ -14,6 +14,6 @@ Suggests:
     rmarkdown
 Imports: 
     ggplot2,
-    patchwork,
-    stats
+    stats,
+    Intro2R
 VignetteBuilder: knitr

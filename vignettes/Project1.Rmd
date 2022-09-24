@@ -1,0 +1,53 @@
+---
+title: "Project1"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Project1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Project1TREV0002)
+knitr::opts_chunk$set(fig.width=7, fig.height=6) 
+```
+
+# Function 1
+```{r}
+library(Intro2R)
+ v <- Intro2R::myreadxl("C:/Users/lmtre/OneDrive - University of Oklahoma/OU/Applied Regression Analysis/R Package/Excel/")
+ v <- v$SCAN
+ v <- data.frame(v$CATEGORY,v$NUMBER)
+x <- onewaytable1(v,0.05,"One way table plot")
+x
+```
+# Function 2
+
+```{r}
+v <- Intro2R::myreadxl("C:/Users/lmtre/OneDrive - University of Oklahoma/OU/Applied Regression Analysis/R Package/Excel/")
+v <- v$HYBRID
+x <- xtabs(v$Number~v$Claim+v$Model)
+k <- twowaytable(x,0.05)
+k
+
+```
+
+# Function 3
+
+```{r}
+v <- Intro2R::myreadxl("C:/Users/lmtre/OneDrive - University of Oklahoma/OU/Applied Regression Analysis/R Package/Excel/")
+v <- v$BONDING
+x <- xtabs(v$NUMBER~v$ARIScore+v$ADHESIVE)
+fisher.test(x,alternative = "two.sided")
+fisher.test(x,alternative = "greater")
+fisher.test(x,alternative = "less")
+```
+
+I have check the documentation for fisher test, but it seems that the only output is the p-value. Thus, i dont see i way that i could make a meaningful plot. Neverthless, it clearly works for this small data set asn chisq.test gives error. i could do a comparison between the different type of hypothesis but again, i dont see much value on that. 
